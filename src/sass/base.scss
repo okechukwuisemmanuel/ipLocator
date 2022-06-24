@@ -1,0 +1,56 @@
+:root {
+  --primary-clr: hsl(223, 33%, 11%);
+  --secondary-clr: hsl(194, 100%, 85%);
+  --dark-clr: #333;
+  --dark-clr1: #555;
+  --light-clr: #fff;
+  --gray-clr: #eee;
+  --gray-clr1: #ddd;
+  --gray-clr2: #ccc;
+}
+
+*,
+*:where(*, :after, :before) {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+}
+
+img,
+picture,
+svg {
+  width: 100%;
+}
+a:not([type="underline"]) {
+  text-decoration: none;
+}
+ul,
+ol:not([type="list"]) {
+  li {
+    list-style-type: none;
+  }
+}
+
+input,
+form,
+button {
+  font: inherit;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-color: var(--gray-clr);
+}
+main {
+  display: grid;
+  padding-block-start: 32px;
+}
+
+section {
+  height: 100%;
+}

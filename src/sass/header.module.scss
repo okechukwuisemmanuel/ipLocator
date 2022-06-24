@@ -1,0 +1,53 @@
+.header {
+  color: var(--secondary-clr);
+  background-color: var(--primary-clr);
+  height: 15em;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.flow {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25em;
+  isolation: isolate;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    text-transform: uppercase;
+    font-size: clamp(1rem, 1.6rem + 3vw, 3.5rem);
+    font-weight: 700;
+  }
+  p {
+    text-align: center;
+    font-size: clamp(0.5rem, 0.5rem + 3vw, 0.8rem);
+    width: min(100% - 2em, 70ch);
+  }
+}
+.form {
+  background-color: var(--light-clr);
+  box-shadow: 0 1px 1px 0.5px var(--gray-clr1);
+  padding: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top: 90%;
+  width: min(90%, 55ch);
+  border-radius: 0.5em;
+  font-size: clamp(0.5rem, 1rem + 3vw, 1.25rem);
+  color: var(--primary-clr);
+
+  & input {
+    all: unset;
+    width: 90%;
+  }
+  & svg {
+    width: 10%;
+  }
+
+  label {
+    position: absolute;
+    left: 200%;
+  }
+}
