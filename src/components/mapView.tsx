@@ -1,6 +1,4 @@
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
-import InputContext, { InputProvider } from "../context/context";
-import { useContext } from "react";
 import { memo } from "react";
 
 const containerStyle = {

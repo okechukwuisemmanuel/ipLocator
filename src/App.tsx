@@ -1,17 +1,18 @@
 import "./sass/base.scss";
 import Header from "./components/header";
 import MapView from "./components/mapView";
-import { InputProvider } from "./context/context";
+import { IpaddressProvider } from "./context/context";
+import Twest from "./components/test";
 
 function App() {
   return (
-    <InputProvider>
+    <IpaddressProvider>
       <Header />
       <main>
         {/* <MapView /> */}
-        hello
+        <Twest />
       </main>
-    </InputProvider>
+    </IpaddressProvider>
   );
 }
 

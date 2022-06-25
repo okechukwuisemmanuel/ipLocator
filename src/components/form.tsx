@@ -1,38 +1,50 @@
 import { FaSearch } from "react-icons/fa";
-import { useState, useRef, useContext } from "react";
-import InputContext from "../context/context";
+import { useRef, useContext, useState } from "react";
+import { ipVersion, isIP } from "is-ip";
+
+import ipAddressContext from "../context/context";
 
 const Form = (props: { className: string }) => {
-  // context
-  const { value, setValue } = useContext(InputContext);
-  // input state
-  const [input, setInput] = useState({ inputValue: value });
   // input ref
   const inputRef = useRef<HTMLInputElement>(null);
-  // input onchange handler
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value,
-    }));
-  };
+  // state
+  const [input, setInput] = useState({ inputValue: "" });
+  // context
+  const { setValue, setVersion } = useContext(ipAddressContext);
+
   // form onclick handler to focus input
   const handleClick = () => {
     inputRef?.current?.focus();
   };
+  //   on change handler
+  function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
+    setInput((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  }
   // form submit handler
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    let v = value;
-    console.log(v);
-    setValue && setValue(input.inputValue);
-    setInput({ inputValue: "" });
+    console.log(input);
+    if (isIP(input.inputValue)) {
+      setValue(input.inputValue);
+      let type = ipVersion(input.inputValue);
+      if (type) {
+        setVersion("ipv" + type);
+      } else {
+        setVersion("unknown");
+      }
+    } else {
+      alert("wrong ip address");
+    }
   };
+
   return (
     <form
       className={props.className}
       onClick={handleClick}
-      onSubmit={handleSubmit}
+      onSubmit={submitHandler}
     >
       <label htmlFor="inputValue"></label>
       <input
@@ -45,7 +57,7 @@ const Form = (props: { className: string }) => {
         min={6}
         minLength={6}
         value={input.inputValue}
-        onChange={handleChange}
+        onChange={onChangeHandler}
       />
       <FaSearch />
     </form>
