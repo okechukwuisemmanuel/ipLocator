@@ -7,9 +7,9 @@ const Header = () => {
       <div className={classes.flow}>
         <h1>iplocator</h1>
         <p>
-          find your current ip address location in a second with google map, you
-          can zoom in for more info , just try it you might bee suprised what
-          you find
+          find your ip address location in a second with google map, you can
+          zoom in for more detail , just try it you might be suprised what you
+          find
         </p>
       </div>
       <Form className={classes.form} />

@@ -1,6 +1,6 @@
 :root {
-  --primary-clr: hsl(223, 33%, 11%);
-  --secondary-clr: hsl(194, 100%, 85%);
+  --primary-clr: hsl(224, 79%, 5%);
+  --secondary-clr: hsl(194, 100%, 91%);
   --dark-clr: #333;
   --dark-clr1: #555;
   --light-clr: #fff;
@@ -43,14 +43,24 @@ body {
   font-size: 16px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
-  min-height: 100vh;
+
   background-color: var(--gray-clr);
+}
+#root {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 15em 1fr;
 }
 main {
   display: grid;
-  padding-block-start: 32px;
+  overflow: hidden;
+  background-color: red;
 }
 
 section {
+  height: 100%;
+}
+.leaflet-container {
+  width: 100%;
   height: 100%;
 }

@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 import { useRef, useContext, useState } from "react";
-import { ipVersion, isIP } from "is-ip";
+import { isIP } from "is-ip";
 
 import ipAddressContext from "../context/context";
 
@@ -10,7 +10,7 @@ const Form = (props: { className: string }) => {
   // state
   const [input, setInput] = useState({ inputValue: "" });
   // context
-  const { setValue, setVersion } = useContext(ipAddressContext);
+  const { setValue } = useContext(ipAddressContext);
 
   // form onclick handler to focus input
   const handleClick = () => {
@@ -26,15 +26,8 @@ const Form = (props: { className: string }) => {
   // form submit handler
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(input);
     if (isIP(input.inputValue)) {
       setValue(input.inputValue);
-      let type = ipVersion(input.inputValue);
-      if (type) {
-        setVersion("ipv" + type);
-      } else {
-        setVersion("unknown");
-      }
     } else {
       alert("wrong ip address");
     }
@@ -54,8 +47,10 @@ const Form = (props: { className: string }) => {
         required
         id="inputValue"
         placeholder="192.168.182.14"
-        min={6}
-        minLength={6}
+        min={7}
+        minLength={7}
+        max={15}
+        maxLength={15}
         value={input.inputValue}
         onChange={onChangeHandler}
       />
