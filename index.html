@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+  <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" />
+  <script src="./vendor/jquery.min.js"></script>
+  <title>ip address location and info tracker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+  <link rel="stylesheet" href="./css/style.css" />
+  
+  <meta name="google-site-verification" content="WAqPpZq4q9sJ7O25Wn7UzYYnbF_RyKay_6558ixn_AU" />
+</head>
+
+<body>
+  <header>
+    <img src="./images/pattern-bg.png" alt="no image" />
+    <div class="header-content">
+      <h1 id="title"><span>ip</span> address Tracker</h1>
+      <form>
+        <input type="tel" name="textInput" id="textinput" autocomplete="0"/>
+        <button type="submit" class="btn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </form>
+      <div class="ipInfo">
+        <div class="row">
+          <h2 class="ipInfo-title">ip address</h2>
+          <p class="ipInfo-address"> 0.0.0.0</p>
+        </div>
+        <div class="row">
+          <h2 class="location-title">location</h2>
+          <p class="location">ny</p>
+          <h2 id="city" style="color: black;"> no 18</h2>
+        </div>
+        <div class="row">
+          <h2 class="timeZone-title">timeZone</h2>
+            <p class="timeZone"> utc</p>
+        </div>
+        <div class="row">
+          <h2 class="isp-title">isp</h2>
+          <p class="isp"> mtn</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="mapDisplay">
+  </section>
+  <script src="./vendor/fontawesome/js/all.min.js"></script>
+
+  <script src="./js/style.js"></script>
+</body>
+
+</html>
