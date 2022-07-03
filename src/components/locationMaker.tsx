@@ -11,10 +11,9 @@ function Marker(props: {
   const mapRef = useRef(false);
   const [tooltip, setTooltip] = useState("");
   const Map = useMap();
+  console.log(process.env);
   useEffect(() => {
-    const baseURL = `https://geo.ipify.org/api/v1?apiKey= ${
-      import.meta.env.VITE_GEO_IPIFY_API_KEY
-    }&ipAddress=${value}`;
+    const baseURL = `https://geo.ipify.org/api/v1?apiKey= ${process.env.VITE_APP_IPIFY_API_KEY}&ipAddress=${value}`;
     if (mapRef.current) {
       fetch(baseURL)
         .then((res) => res.json())
