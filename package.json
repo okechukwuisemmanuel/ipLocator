@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "REACT_APP_IPIFY_API_KEY = at_X5wArQPkZL07YwTmlccyudvsbCvE6 tsc && vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
